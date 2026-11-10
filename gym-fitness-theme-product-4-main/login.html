@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101d3a">
+
+<meta
+name="description"
+content="Log in to your Stackly Fitness account and continue your fitness journey."
+
+>
+
+  <title>Login | Stackly Fitness</title>
+
+  <!-- Google Fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Login CSS -->
+
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body class="auth-page login-page">
+
+  <main class="auth-layout">
+
+
+<section class="auth-form-panel">
+
+  <div class="auth-form-inner">
+
+    <!-- LOGO -->
+    <a href="index.html" class="auth-logo">
+      <img
+        src="assets/stackly logo.webp"
+        alt="Stackly Fitness Logo"
+      >
+    </a>
+
+    <!-- FORM HEADING -->
+    <div class="auth-heading">
+
+      <span class="auth-eyebrow">WELCOME BACK</span>
+
+      <h1>Welcome Back!</h1>
+
+      <p>
+        Log in to continue your fitness journey
+        and keep moving towards your goals.
+      </p>
+
+    </div>
+
+    <!-- LOGIN / SIGNUP SWITCH -->
+    <div class="auth-switch">
+
+      <a href="signup.html" class="auth-switch-btn">
+        Sign Up
+      </a>
+
+      <a href="login.html" class="auth-switch-btn active">
+        Log In
+      </a>
+
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm" class="auth-form" novalidate>
+
+      <!-- EMAIL -->
+      <div class="auth-field">
+
+        <label for="loginEmail">
+          Email Address <span>*</span>
+        </label>
+
+        <input
+          type="email"
+          id="loginEmail"
+          name="email"
+          placeholder="Enter your registered email"
+          autocomplete="email"
+          required
+        >
+
+        <small
+          class="auth-error"
+          data-error-for="email"
+        ></small>
+
+      </div>
+
+      <!-- PASSWORD -->
+      <div class="auth-field">
+
+        <label for="loginPassword">
+          Password <span>*</span>
+        </label>
+
+        <div class="auth-password-wrap">
+
+          <input
+            type="password"
+            id="loginPassword"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+            required
+          >
+
+          <button
+            type="button"
+            class="auth-toggle-password"
+            data-toggle-password="loginPassword"
+            aria-label="Show password"
+          >
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"
+              />
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+
+          </button>
+
+        </div>
+
+        <small
+          class="auth-error"
+          data-error-for="password"
+        ></small>
+
+      </div>
+
+      <!-- REMEMBER ME / FORGOT PASSWORD -->
+      <div class="auth-options">
+
+        <label class="auth-remember">
+
+          <input
+            type="checkbox"
+            id="rememberMe"
+            name="remember"
+          >
+
+          <span>Remember Me</span>
+
+        </label>
+
+        <a
+          href="#"
+          class="auth-forgot-link"
+          id="forgotPasswordLink"
+        >
+          Forgot Password?
+        </a>
+
+      </div>
+
+      <!-- MESSAGE -->
+      <div
+        class="auth-message"
+        id="loginMessage"
+        role="status"
+        aria-live="polite"
+        hidden
+      ></div>
+
+      <!-- SUBMIT -->
+      <button
+        type="submit"
+        class="auth-submit-btn"
+        id="loginSubmit"
+      >
+        Log In
+        <span>→</span>
+      </button>
+
+    </form>
+
+    <!-- SIGNUP LINK -->
+    <p class="auth-bottom-text">
+      Don't have an account?
+      <a href="signup.html">Create an account</a>
+    </p>
+
+    <!-- HOME LINK -->
+    <a href="index.html" class="auth-home-link">
+      ← Back to Home
+    </a>
+
+  </div>
+
+</section>
+
+
+  </main>
+
+  <!-- LOGIN JS -->
+
+  <script src="login.js"></script>
+
+</body>
+</html>

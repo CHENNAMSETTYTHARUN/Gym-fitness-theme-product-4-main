@@ -1,0 +1,1505 @@
+/* =========================================================
+   STACKLY FITNESS WEBSITE
+   HOME PAGE — COMPLETE CSS
+   Alternating Light + Dark Theme
+========================================================= */
+
+/* =========================================================
+   01. HOME VARIABLES
+========================================================= */
+
+:root {
+    --home-navy: #101d3a;
+    --home-dark: #0b1731;
+    --home-navy-light: #192d4d;
+
+    --home-orange: #ff6a00;
+    --home-gold: #ffad42;
+
+    --home-teal: #56dfc7;
+    --home-teal-dark: #0b9c90;
+
+    --home-light: #f4f6fa;
+    --home-white: #ffffff;
+
+    --home-text: #202b40;
+    --home-muted: #788396;
+
+    --home-border: #e6eaf0;
+}
+
+/* =========================================================
+   02. COMMON SECTION STYLES
+========================================================= */
+
+.section-padding {
+    padding: 85px 6%;
+}
+
+.section-heading,
+.membership-heading,
+.testimonial-heading {
+    max-width: 720px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--home-orange);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    margin-bottom: 14px;
+}
+
+.section-heading h2,
+.trainer-heading h2,
+.membership-heading h2,
+.testimonial-heading h2 {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.2;
+    color: var(--home-navy);
+    font-weight: 800;
+    margin-bottom: 17px;
+}
+
+.section-heading p,
+.trainer-heading p,
+.membership-heading p,
+.testimonial-heading p {
+    color: var(--home-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =========================================================
+   03. HERO SECTION
+========================================================= */
+
+.home-hero {
+    position: relative;
+    width: 100%;
+    min-height: 660px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: var(--home-dark);
+    isolation: isolate;
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.hero-bg-image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 40%;
+
+    transform: scale(1.08);
+    opacity: 0;
+
+    animation: heroImageReveal 2s ease forwards;
+}
+
+@keyframes heroImageReveal {
+    0% {
+        opacity: 0;
+        transform: scale(1.12);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hero-dark-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 17, 38, .96) 0%,
+            rgba(10, 25, 49, .87) 40%,
+            rgba(10, 25, 49, .60) 75%,
+            rgba(10, 25, 49, .48) 100%
+        );
+
+    z-index: 1;
+}
+
+.hero-glitter {
+    position: absolute;
+    inset: -100%;
+    z-index: 2;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.75) 1px,
+            transparent 2px
+        ),
+        radial-gradient(
+            circle,
+            rgba(255,151,54,.9) 1.5px,
+            transparent 2.5px
+        ),
+        radial-gradient(
+            circle,
+            rgba(255,106,0,.5) 1px,
+            transparent 2px
+        );
+
+    background-size:
+        110px 110px,
+        155px 155px,
+        190px 190px;
+
+    opacity: .42;
+
+    animation: heroGlitterMove 25s linear infinite;
+}
+
+@keyframes heroGlitterMove {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-250px, -180px);
+    }
+}
+
+.hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: 2;
+    animation: heroOrbFloat 8s ease-in-out infinite;
+}
+
+.hero-orb-one {
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 106, 0, .19);
+    right: 8%;
+    top: 10%;
+}
+
+.hero-orb-two {
+    width: 280px;
+    height: 280px;
+    background: rgba(40, 193, 177, .16);
+    left: 30%;
+    bottom: -15%;
+    animation-delay: -4s;
+}
+
+@keyframes heroOrbFloat {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(-25px, -30px);
+    }
+}
+
+/* =========================================================
+   04. HERO CONTENT
+========================================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    max-width: 900px;
+
+    padding: 95px 8%;
+
+    opacity: 0;
+    transform: translateY(35px);
+
+    animation: heroTextReveal 1s ease 2s forwards;
+}
+
+@keyframes heroTextReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-small-title {
+    display: inline-block;
+    color: var(--home-gold);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    max-width: 850px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 800;
+    line-height: 1.12;
+
+    color: #ffffff;
+    margin-bottom: 23px;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: var(--home-gold);
+}
+
+.hero-content p {
+    max-width: 570px;
+    color: #e0e6ef;
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 15px 30px;
+
+    border-radius: 30px;
+
+    background: var(--home-orange);
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    box-shadow: 0 8px 25px rgba(255, 106, 0, .25);
+
+    transition: .35s ease;
+}
+
+.hero-btn span {
+    font-size: 20px;
+    transition: transform .3s ease;
+}
+
+.hero-btn:hover {
+    background: var(--home-teal);
+    color: var(--home-navy);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(86, 223, 199, .22);
+}
+
+.hero-btn:hover span {
+    transform: translateX(6px);
+}
+
+.hero-bottom-info {
+    position: absolute;
+    z-index: 5;
+
+    bottom: 30px;
+    right: 7%;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    color: rgba(255,255,255,.8);
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    animation: heroInfoReveal 1s ease 2.4s both;
+}
+
+.hero-info-line {
+    width: 45px;
+    height: 2px;
+    background: var(--home-orange);
+}
+
+@keyframes heroInfoReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
+   05. PROGRAMS SECTION — LIGHT
+========================================================= */
+
+.program-section {
+    position: relative;
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            ellipse at 5% 15%,
+            rgba(86, 223, 199, .18),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 95% 85%,
+            rgba(255, 106, 0, .10),
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #ffffff,
+            #f0f6fb,
+            #f8faff
+        );
+}
+
+.program-section .section-heading h2,
+.program-section .passion-description h3 {
+    color: #101d3a;
+}
+
+.program-section .section-heading p,
+.program-section .passion-description p {
+    color: #52647e;
+}
+
+/* Program tags */
+
+.program-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+
+    max-width: 1050px;
+    margin: 0 auto 75px;
+}
+
+.program-tags a {
+    position: relative;
+    overflow: hidden;
+
+    padding: 13px 21px;
+
+    border: 1px solid #e1e5ed;
+    border-radius: 30px;
+
+    background: #ffffff;
+    color: var(--home-navy);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: .35s ease;
+}
+
+.program-tags a:hover {
+    background: var(--home-navy);
+    border-color: var(--home-orange);
+    color: #ffffff;
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 9px 22px rgba(16,29,58,.13);
+}
+
+/* =========================================================
+   06. LIVE YOUR PASSION
+========================================================= */
+
+.passion-layout {
+    display: grid;
+    grid-template-columns: .8fr 1.5fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.passion-description {
+    max-width: 440px;
+}
+
+.passion-description h3 {
+    font-family: "Manrope", sans-serif;
+    color: var(--home-navy);
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 800;
+    margin: 12px 0 18px;
+}
+
+.passion-description p {
+    color: var(--home-muted);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.outline-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 22px;
+
+    border: 1px solid var(--home-navy);
+    border-radius: 30px;
+
+    color: var(--home-navy);
+    background: transparent;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: .35s ease;
+}
+
+.outline-btn span {
+    transition: transform .3s ease;
+}
+
+.outline-btn:hover {
+    background: var(--home-navy);
+    color: #ffffff;
+    border-color: var(--home-orange);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(16,29,58,.13);
+}
+
+.outline-btn:hover span {
+    transform: translateX(6px);
+}
+
+/* Passion cards */
+
+.passion-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.passion-card {
+    position: relative;
+    height: 215px;
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: var(--home-navy);
+    border: 1px solid transparent;
+
+    box-shadow: 0 5px 20px rgba(16,29,58,.07);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease,
+        border-color .4s ease;
+}
+
+.passion-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .65s ease;
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            transparent 30%,
+            rgba(4, 13, 28, .88)
+        );
+
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 800;
+
+    transition: .4s ease;
+}
+
+.card-arrow {
+    width: 32px;
+    height: 32px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--home-orange);
+    color: #ffffff;
+
+    opacity: 0;
+    transform: translateX(-8px);
+
+    transition: .35s ease;
+}
+
+.passion-card:hover {
+    transform: translateY(-9px);
+    border-color: var(--home-orange);
+
+    box-shadow:
+        0 15px 35px rgba(16,29,58,.18),
+        0 0 15px rgba(255,106,0,.12);
+}
+
+.passion-card:hover img {
+    transform: scale(1.12);
+}
+
+.passion-card:hover .image-overlay {
+    background:
+        linear-gradient(
+            transparent 15%,
+            rgba(7, 20, 43, .95)
+        );
+}
+
+.passion-card:hover .card-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* =========================================================
+   07. TRAINERS — DARK
+========================================================= */
+
+.trainer-section {
+    position: relative;
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            ellipse at 5% 30%,
+            rgba(0, 190, 180, .22),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 95% 45%,
+            rgba(255, 106, 0, .14),
+            transparent 35%
+        ),
+        linear-gradient(
+            125deg,
+            #071329,
+            #10314b,
+            #101d3a
+        );
+}
+
+.trainer-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.trainer-heading > div {
+    max-width: 620px;
+}
+
+.trainer-heading h2 {
+    color: #ffffff;
+}
+
+.trainer-heading p {
+    color: #d0dced;
+    max-width: 550px;
+}
+
+.trainer-section .section-label {
+    color: var(--home-gold);
+}
+
+.trainer-section .outline-btn {
+    color: #ffffff;
+    border-color: rgba(255,255,255,.65);
+    background: rgba(255,255,255,.04);
+}
+
+.trainer-section .outline-btn:hover {
+    background: var(--home-teal);
+    color: var(--home-navy);
+    border-color: var(--home-teal);
+}
+
+/* Trainer grid */
+
+.trainer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+/* Trainer card */
+
+.trainer-card {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+    border: 1px solid rgba(255,255,255,.15);
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.20);
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+.trainer-image {
+    height: 255px;
+    overflow: hidden;
+    background: var(--home-navy);
+}
+
+.trainer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .65s ease;
+}
+
+.trainer-info {
+    padding: 20px 17px;
+}
+
+.trainer-info h3 {
+    color: var(--home-navy);
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 7px;
+}
+
+.trainer-info p {
+    color: var(--home-muted);
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.trainer-info span {
+    display: inline-block;
+    color: #ed6500;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.trainer-card:hover {
+    transform: translateY(-9px);
+    border-color: var(--home-orange);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.30),
+        0 0 18px rgba(255,106,0,.18);
+}
+
+.trainer-card:hover .trainer-image img {
+    transform: scale(1.1);
+}
+
+/* =========================================================
+   08. MEMBERSHIP — LIGHT
+========================================================= */
+
+.membership-section {
+    position: relative;
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            circle at 8% 20%,
+            rgba(255,106,0,.07),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(86,223,199,.09),
+            transparent 30%
+        ),
+        linear-gradient(
+            130deg,
+            #ffffff,
+            #eef3fa,
+            #f8faff
+        );
+}
+
+.membership-heading h2 {
+    color: var(--home-navy);
+}
+
+.membership-heading p {
+    color: #64738a;
+}
+
+.membership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+    gap: 25px;
+
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* Membership cards */
+
+.membership-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 35px 28px;
+    overflow: hidden;
+
+    background: #ffffff;
+    border: 1px solid #e2e6ee;
+    border-radius: 16px;
+
+    box-shadow: 0 5px 18px rgba(16,29,58,.04);
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+.membership-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--home-orange),
+            var(--home-gold)
+        );
+
+    transition: width .4s ease;
+}
+
+.membership-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--home-orange);
+
+    box-shadow:
+        0 18px 40px rgba(16,29,58,.12),
+        0 0 15px rgba(255,106,0,.10);
+}
+
+.membership-card:hover::before {
+    width: 100%;
+}
+
+.plan-label {
+    color: var(--home-orange);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.membership-card h3 {
+    color: var(--home-navy);
+    font-family: "Manrope", sans-serif;
+    font-size: 27px;
+    font-weight: 800;
+    margin: 18px 0;
+}
+
+.plan-price {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+
+    color: var(--home-navy);
+
+    font-family: "Manrope", sans-serif;
+    font-size: 49px;
+    font-weight: 800;
+}
+
+.plan-price > span {
+    font-size: 23px;
+    align-self: flex-start;
+    margin-top: 7px;
+}
+
+.plan-price small {
+    color: #8992a0;
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.plan-description {
+    color: var(--home-muted);
+    font-size: 12px;
+    margin: 12px 0 25px;
+}
+
+.membership-card ul {
+    list-style: none;
+    flex-grow: 1;
+    margin-bottom: 25px;
+}
+
+.membership-card li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    color: #596477;
+
+    font-size: 12px;
+    margin-bottom: 17px;
+    line-height: 1.5;
+}
+
+.membership-card li span {
+    color: var(--home-teal-dark);
+    font-weight: 900;
+}
+
+/* Plan button */
+
+.plan-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    width: 100%;
+    padding: 13px 18px;
+
+    background: var(--home-navy);
+    color: #ffffff;
+
+    border: 1px solid var(--home-navy);
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    transition: .35s ease;
+}
+
+.plan-btn span {
+    transition: transform .3s ease;
+}
+
+.plan-btn:hover {
+    background: var(--home-orange);
+    border-color: var(--home-orange);
+    color: #ffffff;
+}
+
+.plan-btn:hover span {
+    transform: translateX(5px);
+}
+
+/* =========================================================
+   09. TESTIMONIALS — DARK
+========================================================= */
+
+.testimonial-section {
+    position: relative;
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            ellipse at 8% 25%,
+            rgba(0, 190, 180, .20),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 90% 75%,
+            rgba(255, 106, 0, .13),
+            transparent 35%
+        ),
+        linear-gradient(
+            125deg,
+            #071329,
+            #102b46,
+            #101d3a
+        );
+}
+
+.testimonial-heading h2 {
+    color: #ffffff;
+}
+
+.testimonial-heading p {
+    color: #d0dced;
+}
+
+.testimonial-section .section-label {
+    color: var(--home-gold);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+/* Testimonial cards */
+
+.testimonial-card {
+    padding: 28px;
+
+    background: #ffffff;
+    border: 1px solid #e6eaf0;
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.20);
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--home-orange);
+
+    box-shadow:
+        0 18px 38px rgba(0,0,0,.28),
+        0 0 15px rgba(255,106,0,.13);
+}
+
+.testimonial-user {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.testimonial-user img {
+    width: 53px;
+    height: 53px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 2px solid var(--home-teal);
+}
+
+.testimonial-user h3 {
+    color: var(--home-navy);
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.testimonial-user span {
+    color: #8b94a2;
+    font-size: 10px;
+}
+
+.testimonial-card > p {
+    color: #596477;
+    font-size: 13px;
+    line-height: 1.9;
+    min-height: 95px;
+}
+
+.testimonial-stars {
+    color: var(--home-orange);
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-top: 15px;
+}
+
+/* =========================================================
+   10. SCROLL REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+
+    transition:
+        opacity .75s ease,
+        transform .75s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================
+   11. IMAGE FALLBACK
+========================================================= */
+
+.passion-card img,
+.trainer-image img,
+.testimonial-user img {
+    background: #dce2ec;
+}
+
+/* =========================================================
+   12. TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+    .section-padding {
+        padding: 75px 5%;
+    }
+
+    .passion-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .passion-description {
+        max-width: 650px;
+    }
+
+    .trainer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trainer-image {
+        height: 280px;
+    }
+
+    .membership-grid {
+        gap: 16px;
+    }
+
+    .membership-card {
+        padding: 30px 20px;
+    }
+}
+
+/* =========================================================
+   13. MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+    .section-padding {
+        padding: 60px 5%;
+    }
+
+    /* Hero */
+
+    .home-hero {
+        min-height: 590px;
+    }
+
+    .hero-bg-image {
+        object-position: 60% center;
+    }
+
+    .hero-dark-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(7,17,38,.94),
+                rgba(10,25,49,.72)
+            );
+    }
+
+    .hero-content {
+        padding: 75px 6%;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(38px, 9vw, 55px);
+        line-height: 1.15;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+        max-width: 450px;
+    }
+
+    .hero-small-title {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .hero-bottom-info {
+        right: 6%;
+        bottom: 22px;
+        font-size: 8px;
+    }
+
+    /* Program tags */
+
+    .program-tags {
+        gap: 9px;
+        margin-bottom: 50px;
+    }
+
+    .program-tags a {
+        padding: 10px 14px;
+        font-size: 10px;
+    }
+
+    /* Passion */
+
+    .passion-cards {
+        gap: 13px;
+    }
+
+    .passion-card {
+        height: 175px;
+    }
+
+    .image-overlay {
+        padding: 13px;
+        font-size: 12px;
+    }
+
+    /* Trainers */
+
+    .trainer-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .trainer-grid {
+        gap: 14px;
+    }
+
+    .trainer-image {
+        height: 210px;
+    }
+
+    .trainer-info {
+        padding: 15px 12px;
+    }
+
+    .trainer-info h3 {
+        font-size: 13px;
+    }
+
+    .trainer-info p {
+        font-size: 10px;
+    }
+
+    .trainer-info span {
+        font-size: 9px;
+    }
+
+    /* Membership */
+
+    .membership-grid {
+        grid-template-columns: 1fr;
+        max-width: 430px;
+        gap: 20px;
+    }
+
+    .membership-card {
+        padding: 30px 25px;
+    }
+
+    /* Testimonials */
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    .testimonial-card > p {
+        min-height: auto;
+    }
+}
+
+/* =========================================================
+   14. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+    .home-hero {
+        min-height: 550px;
+    }
+
+    .hero-content {
+        padding: 65px 6%;
+    }
+
+    .hero-content h1 {
+        font-size: 37px;
+    }
+
+    .passion-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .passion-card {
+        height: 210px;
+    }
+
+    .trainer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trainer-image {
+        height: 165px;
+    }
+
+    .trainer-info h3 {
+        font-size: 12px;
+    }
+
+    .trainer-info p {
+        font-size: 10px;
+    }
+
+    .trainer-info span {
+        font-size: 9px;
+    }
+
+    .section-heading h2,
+    .trainer-heading h2,
+    .membership-heading h2,
+    .testimonial-heading h2 {
+        font-size: 28px;
+    }
+}
+
+/* =========================================================
+   15. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-bg-image,
+    .hero-glitter,
+    .hero-orb,
+    .hero-content,
+    .hero-bottom-info {
+        animation: none !important;
+        opacity: 1;
+        transform: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .passion-card,
+    .trainer-card,
+    .membership-card,
+    .testimonial-card {
+        transition: none;
+    }
+}
+
+
+/* =========================================================
+   HOMEPAGE ANNOUNCEMENT TICKER
+========================================================= */
+
+.home-announcement {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 14px 0;
+
+    background: linear-gradient(
+        90deg,
+        #101d3a,
+        #172b4b,
+        #101d3a
+    );
+
+    border-top: 1px solid rgba(86, 223, 199, 0.18);
+    border-bottom: 1px solid rgba(86, 223, 199, 0.25);
+}
+
+.home-announcement-track {
+    display: flex;
+    width: max-content;
+
+    animation: homeAnnouncementScroll 32s linear infinite;
+}
+
+.home-announcement-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 35px;
+    padding-right: 35px;
+    white-space: nowrap;
+}
+
+.home-announcement-group span {
+    color: #ffffff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.home-announcement-group strong {
+    color: #56dfc7;
+    font-weight: 800;
+}
+
+.home-announcement-group .home-ticker-divider {
+    color: #ff6a00;
+    font-size: 17px;
+}
+
+@keyframes homeAnnouncementScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause when hovered */
+
+.home-announcement:hover .home-announcement-track {
+    animation-play-state: paused;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .home-announcement {
+        padding: 12px 0;
+    }
+
+    .home-announcement-group {
+        gap: 23px;
+        padding-right: 23px;
+    }
+
+    .home-announcement-group span {
+        font-size: 10px;
+        letter-spacing: 0.8px;
+    }
+
+    .home-announcement-track {
+        animation-duration: 24s;
+    }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .home-announcement-track {
+        animation: none !important;
+    }
+}
+
+
+
+/* =========================================================
+   HOME PAGE LOGGED-IN HERO USER GREETING
+========================================================= */
+
+.hero-user-glow {
+    color: var(--teal) !important;
+    text-shadow: 0 0 12px rgba(86, 223, 199, 0.5);
+    font-weight: 800;
+}
+
+.hero-welcome-user-banner {
+    margin-bottom: 14px;
+}
+
+.welcome-user-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(86, 223, 199, 0.12);
+    border: 1px solid rgba(86, 223, 199, 0.4);
+    color: var(--text-light);
+    padding: 7px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    backdrop-filter: blur(8px);
+    animation: fadeInDown 0.5s ease;
+}
+
+.welcome-user-chip strong {
+    color: var(--teal);
+    font-weight: 700;
+}
+
+.welcome-user-chip .welcome-icon {
+    font-size: 14px;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

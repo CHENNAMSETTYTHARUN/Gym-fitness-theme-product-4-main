@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#101d3a">
+
+  <meta
+    name="description"
+    content="Create your Stackly Fitness account and begin your fitness journey."
+  >
+
+  <title>Create Account | Stackly Fitness</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Signup CSS -->
+  <link rel="stylesheet" href="signup.css">
+</head>
+
+<body class="auth-page signup-page">
+
+  <main class="auth-layout">
+
+    <!-- LEFT SIDE: SIGNUP FORM -->
+
+    <section class="auth-form-panel">
+
+      <div class="auth-form-inner">
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="auth-logo">
+          <img
+            src="assets/stackly logo.webp"
+            alt="Stackly Fitness Logo"
+          >
+        </a>
+
+
+        <!-- FORM HEADING -->
+
+        <div class="auth-heading">
+
+          <span class="auth-eyebrow">
+            START YOUR JOURNEY
+          </span>
+
+          <h1>Create Your Account</h1>
+
+          <p>
+            Join Stackly Fitness and take your first step
+            towards a stronger, healthier lifestyle.
+          </p>
+
+        </div>
+
+
+        <!-- LOGIN / SIGNUP SWITCH -->
+
+        <div class="auth-switch">
+
+          <a href="signup.html" class="auth-switch-btn active">
+            Sign Up
+          </a>
+
+          <a href="login.html" class="auth-switch-btn">
+            Log In
+          </a>
+
+        </div>
+
+
+        <!-- SIGNUP FORM -->
+
+        <form id="signupForm" class="auth-form" novalidate>
+
+          <!-- FULL NAME -->
+
+          <div class="auth-field">
+
+            <label for="signupName">
+              Full Name <span>*</span>
+            </label>
+
+            <input
+              type="text"
+              id="signupName"
+              name="name"
+              placeholder="Enter your full name"
+              minlength="2"
+              maxlength="60"
+              autocomplete="name"
+              required
+            >
+
+            <small class="auth-error" data-error-for="name"></small>
+
+          </div>
+
+
+          <!-- EMAIL -->
+
+          <div class="auth-field">
+
+            <label for="signupEmail">
+              Email Address <span>*</span>
+            </label>
+
+            <input
+              type="email"
+              id="signupEmail"
+              name="email"
+              placeholder="Enter your email address"
+              autocomplete="email"
+              required
+            >
+
+            <small class="auth-error" data-error-for="email"></small>
+
+          </div>
+
+
+          <!-- PHONE -->
+
+          <div class="auth-field">
+
+            <label for="signupPhone">
+              Phone Number <span>*</span>
+            </label>
+
+            <input
+              type="tel"
+              id="signupPhone"
+              name="phone"
+              placeholder="Enter your phone number"
+              autocomplete="tel"
+              required
+            >
+
+            <small class="auth-error" data-error-for="phone"></small>
+
+          </div>
+
+
+          <!-- PASSWORD -->
+
+          <div class="auth-field">
+
+            <label for="signupPassword">
+              Password <span>*</span>
+            </label>
+
+            <div class="auth-password-wrap">
+
+              <input
+                type="password"
+                id="signupPassword"
+                name="password"
+                placeholder="Create a password"
+                minlength="8"
+                autocomplete="new-password"
+                required
+              >
+
+              <button
+                type="button"
+                class="auth-toggle-password"
+                data-toggle-password="signupPassword"
+                aria-label="Show password"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"
+                  />
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+
+            </div>
+
+            <small class="auth-error" data-error-for="password"></small>
+
+          </div>
+
+
+          <!-- CONFIRM PASSWORD -->
+
+          <div class="auth-field">
+
+            <label for="signupConfirmPassword">
+              Confirm Password <span>*</span>
+            </label>
+
+            <div class="auth-password-wrap">
+
+              <input
+                type="password"
+                id="signupConfirmPassword"
+                name="confirmPassword"
+                placeholder="Confirm your password"
+                autocomplete="new-password"
+                required
+              >
+
+              <button
+                type="button"
+                class="auth-toggle-password"
+                data-toggle-password="signupConfirmPassword"
+                aria-label="Show confirm password"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"
+                  />
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+
+            </div>
+
+            <small class="auth-error" data-error-for="confirmPassword"></small>
+
+          </div>
+
+
+          <!-- TERMS -->
+
+          <div class="auth-terms">
+
+            <input
+              type="checkbox"
+              id="signupTerms"
+              name="terms"
+              required
+            >
+
+            <label for="signupTerms">
+              I agree to the
+              <a href="terms-of-use.html" class="auth-terms-link" target="_blank" rel="noopener noreferrer">Terms & Conditions</a>
+              and
+              <a href="privacy-policy.html" class="auth-terms-link" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+            </label>
+
+          </div>
+
+          <small class="auth-error" data-error-for="terms"></small>
+
+
+          <!-- GENERAL MESSAGE -->
+
+          <div
+            class="auth-message"
+            id="signupMessage"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></div>
+
+
+          <!-- SUBMIT -->
+
+          <button
+            type="submit"
+            class="auth-submit-btn"
+            id="signupSubmit"
+          >
+            Create Account
+            <span>→</span>
+          </button>
+
+        </form>
+
+
+        <!-- LOGIN LINK -->
+
+        <p class="auth-bottom-text">
+          Already have an account?
+          <a href="login.html">Log In</a>
+        </p>
+
+
+        <!-- HOME LINK -->
+
+        <a href="index.html" class="auth-home-link">
+          ← Back to Home
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- RIGHT SIDE: IMAGE PANEL -->
+
+    <section class="auth-image-panel">
+
+      <div class="auth-image-background">
+
+        <img
+          src="assets/programs/programs hero.webp"
+          alt="Modern fitness training environment"
+        >
+
+      </div>
+
+      <div class="auth-image-overlay"></div>
+
+      <div class="auth-image-content">
+
+        <span class="auth-image-eyebrow">
+          WELCOME TO STACKLY
+        </span>
+
+        <h2>
+          Your Strength.
+          <span>Your Journey.</span>
+          Your Story.
+        </h2>
+
+        <p>
+          Every great transformation begins with one decision.
+          Take that step today and build a stronger version
+          of yourself.
+        </p>
+
+        <div class="auth-image-bottom">
+
+          <span>MOVE BETTER. FEEL STRONGER.</span>
+
+          <span>STACKLY FITNESS</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- SIGNUP JS -->
+  <script src="signup.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,591 @@
+/* =========================================================
+STACKLY FITNESS — LOGIN PAGE
+Full Background Image + Centered Login Card
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html {
+min-height: 100%;
+}
+
+body.auth-page.login-page {
+min-height: 100vh;
+min-height: 100svh;
+padding: 35px 18px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+font-family: "DM Sans", "Manrope", sans-serif;
+color: #ffffff;
+
+background:
+linear-gradient(
+135deg,
+rgba(5, 12, 28, 0.78),
+rgba(5, 12, 28, 0.62),
+rgba(5, 12, 28, 0.82)
+),
+url("assets/home/home\ hero.webp");
+
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+
+.login-page button,
+.login-page input {
+font-family: inherit;
+}
+
+/* =========================================================
+CENTERED LAYOUT
+========================================================= */
+
+.login-page .auth-layout {
+width: 100%;
+min-height: auto;
+
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.login-page .auth-form-panel {
+width: 100%;
+max-width: 475px;
+min-height: auto;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+padding: 38px 42px;
+
+background: rgba(10, 22, 45, 0.91);
+
+border: 1px solid rgba(255, 255, 255, 0.18);
+border-radius: 20px;
+
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+
+box-shadow:
+0 25px 75px rgba(0, 0, 0, 0.45),
+0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.login-page .auth-form-inner {
+width: 100%;
+max-width: 390px;
+padding: 0;
+}
+
+/* =========================================================
+LOGO
+========================================================= */
+
+.login-page .auth-logo {
+display: flex;
+align-items: center;
+justify-content: center;
+
+width: fit-content;
+margin: 0 auto 28px;
+}
+
+.login-page .auth-logo img {
+display: block;
+width: 175px;
+max-height: 65px;
+object-fit: contain;
+}
+
+/* =========================================================
+HEADING
+========================================================= */
+
+.login-page .auth-heading {
+margin-bottom: 25px;
+text-align: center;
+}
+
+.login-page .auth-eyebrow {
+display: inline-block;
+margin-bottom: 10px;
+
+color: #ff6a00;
+font-size: 11px;
+font-weight: 900;
+letter-spacing: 2px;
+}
+
+.login-page .auth-heading h1 {
+margin-bottom: 10px;
+
+color: #ffffff;
+font-size: 34px;
+font-weight: 900;
+line-height: 1.2;
+}
+
+.login-page .auth-heading p {
+max-width: 340px;
+margin: 0 auto;
+
+color: #b7c2d4;
+font-size: 13px;
+line-height: 1.8;
+}
+
+/* =========================================================
+LOGIN / SIGNUP SWITCH
+========================================================= */
+
+.login-page .auth-switch {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 5px;
+
+margin-bottom: 25px;
+padding: 5px;
+
+border-radius: 8px;
+background: rgba(255, 255, 255, 0.09);
+}
+
+.login-page .auth-switch-btn {
+min-height: 43px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border-radius: 6px;
+
+color: #c0cada;
+font-size: 13px;
+font-weight: 800;
+text-decoration: none;
+
+transition: all 0.3s ease;
+}
+
+.login-page .auth-switch-btn:hover {
+color: #ffffff;
+}
+
+.login-page .auth-switch-btn.active {
+background: #ffffff;
+color: #101d3a;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================
+FORM
+========================================================= */
+
+.login-page .auth-form {
+display: grid;
+gap: 18px;
+}
+
+.login-page .auth-field {
+display: flex;
+flex-direction: column;
+gap: 8px;
+
+min-width: 0;
+}
+
+.login-page .auth-field label {
+color: #e6ebf3;
+font-size: 12px;
+font-weight: 800;
+}
+
+.login-page .auth-field label span {
+color: #ff6a00;
+}
+
+.login-page .auth-field input {
+width: 100%;
+height: 52px;
+padding: 0 15px;
+
+outline: none;
+border: 1px solid rgba(255, 255, 255, 0.18);
+border-radius: 7px;
+
+background: rgba(255, 255, 255, 0.96);
+color: #101d3a;
+
+font-size: 13px;
+
+transition:
+border-color 0.25s ease,
+box-shadow 0.25s ease;
+}
+
+.login-page .auth-field input::placeholder {
+color: #9aa5b5;
+}
+
+.login-page .auth-field input:focus {
+border-color: #56dfc7;
+box-shadow: 0 0 0 3px rgba(86, 223, 199, 0.2);
+}
+
+.login-page .auth-field input.invalid {
+border-color: #ff6b75;
+box-shadow: 0 0 0 3px rgba(255, 107, 117, 0.12);
+}
+
+/* =========================================================
+PASSWORD INPUT
+========================================================= */
+
+.login-page .auth-password-wrap {
+position: relative;
+width: 100%;
+}
+
+.login-page .auth-password-wrap input {
+padding-right: 48px;
+}
+
+.login-page .auth-toggle-password {
+position: absolute;
+top: 50%;
+right: 13px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+width: 27px;
+height: 27px;
+padding: 3px;
+
+transform: translateY(-50%);
+
+border: none;
+background: transparent;
+color: #758196;
+
+cursor: pointer;
+transition: color 0.25s ease;
+}
+
+.login-page .auth-toggle-password:hover {
+color: #ff6a00;
+}
+
+.login-page .auth-toggle-password svg {
+width: 19px;
+height: 19px;
+
+fill: none;
+stroke: currentColor;
+stroke-width: 1.8;
+stroke-linecap: round;
+stroke-linejoin: round;
+}
+
+/* =========================================================
+ERROR MESSAGES
+========================================================= */
+
+.login-page .auth-error {
+min-height: 0;
+color: #ff858d;
+font-size: 11px;
+line-height: 1.5;
+}
+
+.login-page .auth-error:empty {
+display: none;
+}
+
+/* =========================================================
+REMEMBER ME / FORGOT PASSWORD
+========================================================= */
+
+.login-page .auth-options {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 12px;
+
+margin-top: -2px;
+}
+
+.login-page .auth-remember {
+display: flex;
+align-items: center;
+gap: 8px;
+
+color: #c0cada;
+font-size: 12px;
+font-weight: 600;
+
+cursor: pointer;
+}
+
+.login-page .auth-remember input {
+width: 15px;
+height: 15px;
+accent-color: #56dfc7;
+cursor: pointer;
+}
+
+.login-page .auth-forgot-link {
+color: #ff8a38;
+font-size: 12px;
+font-weight: 800;
+text-decoration: none;
+
+transition: color 0.25s ease;
+}
+
+.login-page .auth-forgot-link:hover {
+color: #56dfc7;
+text-decoration: underline;
+}
+
+/* =========================================================
+GENERAL MESSAGE
+========================================================= */
+
+.login-page .auth-message {
+padding: 12px 14px;
+border-radius: 7px;
+font-size: 12px;
+line-height: 1.6;
+}
+
+.login-page .auth-message[hidden] {
+display: none;
+}
+
+.login-page .auth-message.success {
+border: 1px solid #56dfc7;
+background: rgba(86, 223, 199, 0.12);
+color: #8ff5df;
+}
+
+.login-page .auth-message.error {
+border: 1px solid #ff858d;
+background: rgba(255, 107, 117, 0.12);
+color: #ffb1b6;
+}
+
+/* =========================================================
+SUBMIT BUTTON
+========================================================= */
+
+.login-page .auth-submit-btn {
+width: 100%;
+min-height: 53px;
+padding: 13px 20px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+
+border: 2px solid #ff6a00;
+border-radius: 7px;
+
+background: #ff6a00;
+color: #ffffff;
+
+font-size: 14px;
+font-weight: 900;
+
+cursor: pointer;
+
+transition: all 0.3s ease;
+}
+
+.login-page .auth-submit-btn span {
+font-size: 19px;
+transition: transform 0.3s ease;
+}
+
+.login-page .auth-submit-btn:hover {
+border-color: #56dfc7;
+background: #56dfc7;
+color: #101d3a;
+
+transform: translateY(-2px);
+box-shadow: 0 9px 22px rgba(0, 0, 0, 0.2);
+}
+
+.login-page .auth-submit-btn:hover span {
+transform: translateX(5px);
+}
+
+.login-page .auth-submit-btn:disabled {
+opacity: 0.65;
+cursor: not-allowed;
+transform: none;
+}
+
+/* =========================================================
+BOTTOM LINKS
+========================================================= */
+
+.login-page .auth-bottom-text {
+margin-top: 23px;
+
+color: #b7c2d4;
+font-size: 12px;
+text-align: center;
+}
+
+.login-page .auth-bottom-text a {
+color: #ff8a38;
+font-weight: 900;
+text-decoration: none;
+}
+
+.login-page .auth-bottom-text a:hover {
+color: #56dfc7;
+text-decoration: underline;
+}
+
+.login-page .auth-home-link {
+display: block;
+width: fit-content;
+
+margin: 18px auto 0;
+
+color: #aebbd0;
+font-size: 12px;
+font-weight: 700;
+text-decoration: none;
+
+transition: color 0.3s ease;
+}
+
+.login-page .auth-home-link:hover {
+color: #56dfc7;
+}
+
+/* =========================================================
+TABLET RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+body.auth-page.login-page {
+padding: 30px 20px;
+background-attachment: scroll;
+}
+
+.login-page .auth-form-panel {
+max-width: 460px;
+padding: 35px 32px;
+}
+
+}
+
+/* =========================================================
+MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 480px) {
+
+body.auth-page.login-page {
+padding: 20px 14px;
+background-position: center;
+background-attachment: scroll;
+}
+
+.login-page .auth-form-panel {
+padding: 30px 22px;
+border-radius: 16px;
+}
+
+.login-page .auth-logo {
+margin-bottom: 23px;
+}
+
+.login-page .auth-logo img {
+width: 150px;
+}
+
+.login-page .auth-heading {
+margin-bottom: 22px;
+}
+
+.login-page .auth-heading h1 {
+font-size: 29px;
+}
+
+.login-page .auth-heading p {
+font-size: 12px;
+}
+
+.login-page .auth-form {
+gap: 16px;
+}
+
+.login-page .auth-field input {
+height: 49px;
+}
+
+.login-page .auth-options {
+gap: 8px;
+}
+
+.login-page .auth-remember,
+.login-page .auth-forgot-link {
+font-size: 11px;
+}
+
+}
+
+/* =========================================================
+SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+.login-page .auth-form-panel {
+padding: 25px 17px;
+}
+
+.login-page .auth-heading h1 {
+font-size: 26px;
+}
+
+.login-page .auth-logo img {
+width: 135px;
+}
+
+}
+
+/* =========================================================
+ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+.login-page *,
+.login-page *::before,
+.login-page *::after {
+scroll-behavior: auto !important;
+animation-duration: 0.01ms !important;
+transition-duration: 0.01ms !important;
+}
+
+}
